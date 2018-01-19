@@ -1,10 +1,13 @@
 var twitter = require('./twitter/basic');
 var twitterStream = require('./twitter/stream');
 
-var channels = {
-    "coins" : ['$TRX','$BTC','$ETH', '$NEO'],
-    "js-frameworks" : ['angularjs','jquery','backbone','emberjs'],
-    "web" : ['javascript','nodejs','html5','css','angularjs']
-};
 
+// Streaming
+var channels = {
+    "coins" : ['$TRX','$BTC','$ETH', '$NEO']
+};
 twitterStream.start(channels);
+
+// Static
+// var term = {query: '$XLM'};
+// twitter.search(term);

@@ -9,24 +9,24 @@ var client = new Twitter({
   access_token_secret: process.env.TOKEN_SECRET,
 });
 
-function searchTweets(params, callback){
+function searchTweets(params){
 	client.get('search/tweets', {q: params.query}, function(error, tweets, response) {
-		callback(tweets.statuses);
+		var score = 0;
+		tweets.statuses.forEach(function(t){
+			var tweetScore = SentimentAnalysis(t.text);
+			console.log(tweetScore + "\t" + t.text + "\n" + "__________________________");
+			score += tweetScore;
+		})
+		console.log("********************************");
+		console.log("Tweets analyzed:", tweets.statuses.length);
+		console.log("Sentiment score:", score);
 	});
 }
 
 // Sentiment analysis for term: bitcoin
-// searchTweets({query: '$XLM'}, function(tweets){
-// 	var score = 0;
-// 	tweets.forEach(function(t){
-// 		var tweetScore = SentimentAnalysis(t.text);
-// 		console.log(tweetScore + "\t" + t.text + "\n" + "__________________________");
-// 		score += tweetScore;
-// 	})
-// 	console.log("********************************");
-// 	console.log("Tweets analyzed:", tweets.length);
-// 	console.log("Sentiment score:", score);
-// });
+searchTweets({query: '$XLM'}, function(tweets){
+
+});
 
 module.exports = {
 	search: searchTweets
