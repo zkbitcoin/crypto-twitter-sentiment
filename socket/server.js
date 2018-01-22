@@ -1,6 +1,5 @@
 var server = require('http').createServer();
 var socketServer = require('socket.io');
-var port = 3000;
 var client = null; // hold socket here
 
 var io = socketServer(server, {
@@ -17,14 +16,17 @@ io.on('connection', function(socket) {
 	client = socket;
 });
 
-server.listen(port, function() {
-	console.log('Socket listening on port', port);
-});
+function start(port){
+	server.listen(port, function() {
+		console.log('Socket listening on port', port);
+	});
+}
 
 function getClient(){
 	return client;
 }
 
 module.exports = {
+	start: start,
 	getClient: getClient
 };
