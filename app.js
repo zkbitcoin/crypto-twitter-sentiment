@@ -8,12 +8,10 @@ var channels = {
     "coins" : ['$XLM', '$ETH', '$CRPT', '$BNK', '$BTC', '$ETH']
 };
 
-twitterStream.start(channels, function(tick, average, tweet){
+twitterStream.start(channels, function(tick, tweet){
     var client = socket.getClient();
     if(client !== null){
-        client.emit('tick', tick);
-        client.emit('average', average);
-        client.emit('tweet', tweet);
+        client.emit('tick', { tick: tick, tweet: tweet} );
     }
 });
 

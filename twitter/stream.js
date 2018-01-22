@@ -23,7 +23,7 @@ function startStream(channels, callback) {
     var tweetScore = SentimentAnalysis(tweet.text);
     console.log(logColor(tweetScore), 'SENTIMENT: ' + tweetScore);
     console.log(pipe.add(tweetScore));
-    callback(tweetScore, pipe.average(), tweet.text);
+    callback(tweetScore, tweet.text);
   });
 }
 
