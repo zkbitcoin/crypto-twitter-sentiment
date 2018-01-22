@@ -24,9 +24,9 @@ function searchTweets(params){
 }
 
 // Sentiment analysis for term: bitcoin
-searchTweets({query: '$XLM'}, function(tweets){
-
-});
+// searchTweets({query: '$XLM'}, function(tweets){
+//
+// });
 
 module.exports = {
 	search: searchTweets
