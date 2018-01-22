@@ -9,26 +9,15 @@ body {
 	overflow: hidden;
 	height: 100vh;
 	padding: 10px;
-
-	/* -moz-column-count: 3;
-    -moz-columns: 3;
-    -webkit-columns: 3;
-    columns: 3; */
 }
 
-@-webkit-keyframes tweet-waterfall {
-   0% {background: lightblue; max-height: 0; color: transparent; padding: 0 16px; margin: 0px 5px; }
-   100% {background: white; max-height: 39px; color: black; padding: 0 16px 16px 16px; margin: 10px 5px;}
+@keyframes tweet-waterfall {
+	0% {background: lightblue; max-height: 0; color: transparent; padding: 0 16px; margin: 0px 5px; }
+    100% {background: white; max-height: 39px; color: black; padding: 0 16px 16px 16px; margin: 10px 5px;}
 }
-
-/* @keyframes tweet-fade {
-   0% {background: lightblue; height: 250px;}
-   100% {background: white; height: 468px;}
-} */
 
 .tweet {
 	overflow: hidden;
-	/* float: left; */
 	text-overflow: ellipsis;
 	max-height: 39px;
 	background: white;
