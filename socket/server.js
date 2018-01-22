@@ -3,12 +3,12 @@ var socketServer = require('socket.io');
 var client = null; // hold socket here
 
 var io = socketServer(server, {
-	path: '/' //,
-	// serveClient: false,
+	path: '/',
+	serveClient: false,
 	// // below are engine.IO options
-	// pingInterval: 10000,
-	// pingTimeout: 5000,
-	// cookie: false
+	pingInterval: 10000,
+	pingTimeout: 5000,
+	cookie: false
 });
 
 io.on('connection', function(socket) {
