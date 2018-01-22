@@ -10,8 +10,10 @@ var channels = {
     "coins" : ['$XLM', '$ETH', '$CRPT', '$BNK', '$BTC', '$ETH', '#bitcoin', '#cryptocurrency', '#ripple', '#ethereum', 'bitcoin', 'ethereum', 'cryptocurrency']
 };
 
-socket.start(3000);
-preview.start(3001);
+var socketPort = process.env.PORT || 3000;
+var previewPort = 3001;
+socket.start(socketPort);
+preview.start(previewPort);
 
 twitterStream.start(channels, function(tick, tweet){
     var client = socket.getClient();
