@@ -48,7 +48,7 @@ window.onload = function() {
 	// socket
 	var socket = io.connect('http://localhost:3000');
     socket.on('welcome', function (data) {
-        console.log(data);
+        console.log('Server said:', data);
     });
 
 	socket.on('tick', function(tick) {
@@ -59,5 +59,7 @@ window.onload = function() {
 		console.log('average', average);
 	});
 
-
+	socket.on('tweet', function(tweet) {
+		console.log('tweet', tweet);
+	});
 }
