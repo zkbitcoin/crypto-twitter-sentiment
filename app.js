@@ -5,7 +5,7 @@ var socket = require('./socket/server');
 
 // Streaming
 var channels = {
-    "coins" : ['$XLM', '$ETH', '$CRPT', '$BNK']
+    "coins" : ['$XLM', '$ETH', '$CRPT', '$BNK', '$BTC', '$ETH']
 };
 
 twitterStream.start(channels, function(tick, average, tweet){
