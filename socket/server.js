@@ -17,7 +17,7 @@ io.on('connection', function(socket) {
 });
 
 function start(port){
-	server.listen(port, function() {
+	server.listen(port, '0.0.0.0', function() {
 		console.log('Socket listening on port', port);
 	});
 }

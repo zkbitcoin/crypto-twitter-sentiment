@@ -7,7 +7,7 @@ var opn = require('opn');
 
 // Streaming
 var channels = {
-    "coins" : ['$XLM', '$ETH', '$CRPT', '$BNK', '$BTC', '$ETH']
+    "coins" : ['$XLM', '$ETH', '$CRPT', '$BNK', '$BTC', '$ETH', '#bitcoin', '#cryptocurrency', '#ripple', '#ethereum', 'bitcoin', 'ethereum', 'cryptocurrency']
 };
 
 socket.start(3000);
