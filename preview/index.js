@@ -47,11 +47,17 @@ window.onload = function() {
 
 	// socket
 	var socket = io.connect('http://localhost:3000');
-	console.log(socket);
     socket.on('welcome', function (data) {
         console.log(data);
-        // welcome.innerHTML = "Welcome to the game <strong>" + data.name + "</strong>";
     });
+
+	socket.on('tick', function(tick) {
+		console.log('tick', tick);
+	});
+
+	socket.on('average', function(average) {
+		console.log('average', average);
+	});
 
 
 }

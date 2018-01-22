@@ -1,10 +1,10 @@
 var TwitterStreamChannels = require('twitter-stream-channels');
 var SentimentAnalysis = require('sentiment-analysis');
 var pipe = require('../util/pipe');
-pipe.init(10);
-
-
 require('dotenv').config();
+
+// hold last 10 values
+pipe.init(10);
 
 var credentials = {
   consumer_key: process.env.CONSUMER_KEY,
@@ -15,7 +15,7 @@ var credentials = {
 
 var client = new TwitterStreamChannels(credentials);
 
-function startStream(channels) {
+function startStream(channels, callback) {
   var stream = client.streamChannels({
     track: channels
   });
@@ -23,7 +23,7 @@ function startStream(channels) {
     var tweetScore = SentimentAnalysis(tweet.text);
     console.log(logColor(tweetScore), 'SENTIMENT: ' + tweetScore);
     console.log(pipe.add(tweetScore));
-    // console.log(tweet.text); //any tweet with 'javascript','php','java','python','perl'
+    callback(tweetScore, pipe.average());
   });
 }
 
