@@ -22,7 +22,6 @@ function startStream(channels, callback) {
   stream.on('channels/coins', function(tweet) {
     var tweetScore = SentimentAnalysis(tweet.text);
     console.log(logColor(tweetScore), 'SENTIMENT: ' + tweetScore);
-    console.log(pipe.add(tweetScore));
     callback(tweetScore, tweet.text);
   });
 }
