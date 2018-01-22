@@ -1,25 +1,38 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	overflow-y: hidden;
+	background-color: aliceblue;
 }
 
 #tweets {
-	max-height: 500px;
-	overflow-y: scroll;
+	/* max-height: 500px; */
+	overflow: hidden;
+	height: 100vh;
+	padding: 10px;
+
+	/* -moz-column-count: 3;
+    -moz-columns: 3;
+    -webkit-columns: 3;
+    columns: 3; */
 }
 
-@-webkit-keyframes tweet-fade {
-   0% {background: lightblue;}
-   100% {background: none;}
+@-webkit-keyframes tweet-waterfall {
+   0% {background: lightblue; max-height: 0; color: transparent; padding: 0 16px; margin: 0px 5px; }
+   100% {background: white; max-height: 39px; color: black; padding: 0 16px 16px 16px; margin: 10px 5px;}
 }
 
-@keyframes tweet-fade {
-   0% {background: lightblue;}
-   100% {background: none;}
-}
+/* @keyframes tweet-fade {
+   0% {background: lightblue; height: 250px;}
+   100% {background: white; height: 468px;}
+} */
 
 .tweet {
-	animation: tweet-fade 1s ease-in 1;
+	overflow: hidden;
+	/* float: left; */
+	text-overflow: ellipsis;
+	max-height: 39px;
+	background: white;
+	animation: tweet-waterfall 1s ease-in;
 	display: block;
 	font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
 	font-size: 12px;
