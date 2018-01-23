@@ -156,7 +156,6 @@ socket.on('welcome', function(data) {
 });
 
 socket.on('tick', function(tick) {
-	//console.log('tick', tick);
 	pipe.add(tick.tick);
 	updateChart(pipe.simpleMovingAverage());
 	addTweet(tick.tweet);
