@@ -5,10 +5,15 @@
 	<title>Sentiment Analysis on Tweets</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="index.css" rel="stylesheet">
+	<link href="button.css" rel="stylesheet">
 </head>
 
 <body>
 	<div id="chartContainer" style="height: 370px; width:100%;"></div>
+	<div>
+		 <button type="button" class="md-btn md-btn-raised md-btn-ripple" onclick="toggleStream()">Toggle Stream</button>
+		 <button type="button" class="md-btn md-btn-raised md-btn-ripple" onclick="addTestTweet()">Test Tweet</button>
+	</div>
 	<div id="tweets"></div>
 
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

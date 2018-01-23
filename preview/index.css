@@ -65,3 +65,21 @@ body {
 .tweet a:hover, .tweet a:focus {
 	text-decoration: underline;
 }
+
+.basic-button {
+	background: #00ACEE;
+	border-radius: 2px;
+	color: #fff;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #0075a2;
+}
+
+.basic-button:link, .basic-button:visited {
+	color: #fff;
+}
+
+.basic-button:active, .basic-button:hover {
+	background: #0075a2;
+	color: #fff;
+}
