@@ -42,6 +42,8 @@ class Pipe {
 var dps = []; // dataPoints
 var dataLength = 100; // number of dataPoints visible at any point
 var pipe = new Pipe(dataLength);
+var count = 0;
+var stopStream = false;
 
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
@@ -69,6 +71,10 @@ var chart = new CanvasJS.Chart("chartContainer", {
 
 function updateChart(tick) {
 
+    if (stopStream) {
+		return;
+	}
+
 	dps.push({
 		x: new Date(),
 		y: [tick, 0]
@@ -82,12 +88,8 @@ function updateChart(tick) {
 };
 updateChart(0);
 
-
-var count = 0;
-var stop = true;
-
 function toggleStream() {
-	stop = !stop;
+	stopStream = !stopStream;
 }
 
 function addTestTweet() {
@@ -134,7 +136,7 @@ function tweetFilter(tweet) {
 }
 
 function addTweet(tweet) {
-	if (stop) {
+	if (stopStream) {
 		return;
 	}
 
