@@ -12,8 +12,20 @@ body {
 }
 
 @keyframes tweet-waterfall {
-	0% {background: lightblue; max-height: 0; color: transparent; padding: 0 16px; margin: 0px 5px; }
-    100% {background: white; max-height: 39px; color: black; padding: 0 16px 16px 16px; margin: 10px 5px;}
+	0% {
+		background: #7fa5d0;
+		max-height: 0;
+		color: transparent;
+		padding: 0 16px;
+		margin: 0px 5px;
+	}
+	100% {
+		background: white;
+		max-height: 39px;
+		color: black;
+		padding: 0 16px 16px 16px;
+		margin: 10px 5px;
+	}
 }
 
 .tweet {
