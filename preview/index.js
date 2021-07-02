@@ -40,7 +40,7 @@ class Pipe {
 
 
 var dps = []; // dataPoints
-var dataLength = 100; // number of dataPoints visible at any point
+var dataLength = 1000; // number of dataPoints visible at any point
 var pipe = new Pipe(dataLength);
 var count = 0;
 var stopStream = false;
@@ -102,7 +102,7 @@ function addTestTweet() {
 	}
 }
 
-function tweetFilter(tweet) {
+function tweetFilter(tweet, username) {
 
     var htmlString = tweet.split(" ").map(function(word){
         if(word.indexOf('@') === 0){
@@ -127,7 +127,7 @@ function tweetFilter(tweet) {
     console.log(htmlString);
 
 	var div = document.createElement('div');
-	div.innerHTML = '<div class="tweet">'+htmlString.trim()+'</div>';
+	div.innerHTML = '<div class="tweet">'+htmlString.trim()+'<p>-'+username+'</p></div>';
 
     console.log(div.firstChild);
 
@@ -135,14 +135,14 @@ function tweetFilter(tweet) {
 	return div.firstChild;
 }
 
-function addTweet(tweet) {
+function addTweet(tweet, username) {
 	if (stopStream) {
 		return;
 	}
 
 	count++;
     var tweetList = document.getElementById('tweets');
-	var tweetDiv = tweetFilter(tweet);//document.createTextNode(tweet);
+	var tweetDiv = tweetFilter(tweet, username);//document.createTextNode(tweet);
 	tweetList.insertBefore(tweetDiv, tweetList.firstChild);
 	if (count > dataLength) {
 		tweetList.removeChild(tweetList.lastChild);
@@ -158,5 +158,5 @@ socket.on('welcome', function(data) {
 socket.on('tick', function(tick) {
 	pipe.add(tick.tick);
 	updateChart(pipe.simpleMovingAverage());
-	addTweet(tick.tweet);
+	addTweet(tick.tweet, tick.username);
 });
