@@ -7,19 +7,8 @@ var opn = require("opn");
 // Streaming
 var channels = {
   coins: [
-    "$XLM",
-    "$ETH",
-    "$CRPT",
-    "$BNK",
-    "$BTC",
-    "$ETH",
-    "#bitcoin",
-    "#cryptocurrency",
-    "#ripple",
-    "#ethereum",
-    "bitcoin",
-    "ethereum",
-    "cryptocurrency",
+    "$PIVX",
+    "PIVX",
   ],
 };
 
@@ -30,7 +19,7 @@ socket.start(socketPort);
 preview.start(previewPort);
 
 twitterStream.start(channels, function (tick, tweet, username) {
-  console.log(tweet);
+  //console.log(tweet);
   var client = socket.getClient();
   if (client !== null) {
     client.emit("tick", { tick: tick, tweet: tweet, username: username });
