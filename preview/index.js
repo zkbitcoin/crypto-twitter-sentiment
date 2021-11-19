@@ -150,7 +150,7 @@ function addTweet(tweet, username) {
 }
 
 // socket
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect('https://zkbitcoin.com:3000');
 socket.on('welcome', function(data) {
 	console.log('Server said:', data);
 });

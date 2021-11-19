@@ -10,7 +10,7 @@ var io = socketServer(server, {
 	pingTimeout: 5000,
 	cookie: false,
 	cors: {
-		origin: 'https://localhost:3001',
+		origin: 'https://zkbitcoin.com:3001',
 		credentials: true
 	}
 });
