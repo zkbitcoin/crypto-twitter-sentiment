@@ -7,10 +7,22 @@ var opn = require("opn");
 // Streaming
 var channels = {
   coins: [
-    "$PIVX",
-    "PIVX",
+    "$XLM",
+    "$ETH",
+    "$CRPT",
+    "$BNK",
+    "$BTC",
+    "$ETH",
+    "#bitcoin",
+    "#cryptocurrency",
+    "#ripple",
+    "#ethereum",
+    "bitcoin",
+    "ethereum",
+    "cryptocurrency",
   ],
 };
+
 
 var socketPort = process.env.PORT || 3000;
 var previewPort = 3001;
