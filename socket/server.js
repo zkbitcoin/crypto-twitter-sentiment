@@ -1,6 +1,11 @@
-var server = require('http').createServer()
+const fs = require("fs");
 var socketServer = require('socket.io');
 var client = null; // hold socket here
+
+const server = require("https").createServer({
+	key: fs.readFileSync(process.env.SSL_KEY),
+	cert: fs.readFileSync(process.env.SSL_CERT),
+});
 
 var io = socketServer(server, {
 	path: '/',
@@ -9,6 +14,9 @@ var io = socketServer(server, {
 	pingInterval: 10000,
 	pingTimeout: 5000,
 	cookie: false,
+	secure:true,
+	reconnect: true,
+	rejectUnauthorized : false,
 	cors: {
 		origin: 'https://zkbitcoin.com:3001',
 		credentials: true
