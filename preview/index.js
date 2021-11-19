@@ -51,7 +51,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	theme: "light1",
 	backgroundColor: "#f0f8ff",
 	title: {
-		text: "Cryptomarket Sentiment"
+		text: "PIVX Twitter Sentiment"
 	},
 	axisY: {
 		includeZero: true,
