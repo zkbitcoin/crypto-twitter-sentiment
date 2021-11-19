@@ -25,15 +25,3 @@ function start(port){
 module.exports = {
 	start: start
 }
-/*
-function start(port){
-	var options = {
-		key: fs.readFileSync(process.env.SSL_KEY),
-		cert: fs.readFileSync(process.env.SSL_CERT)
-	};
-	https.createServer(options, function (req, res) {
-		console.log('Socket listening on port', port);
-	}).listen(port);
-
-}
-*/
