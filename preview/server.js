@@ -1,10 +1,14 @@
 var express = require('express');
+//var cors = require('cors')
 var app = express();
+//app.use(cors())
 var path = require('path');
 var fs = require('fs');
 var https = require('https');
 
 app.use(express.static(__dirname));
+//app.use(cors({ origin: true }));
+
 
 /*
 function start(port){

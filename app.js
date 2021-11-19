@@ -7,8 +7,19 @@ var opn = require("opn");
 // Streaming
 var channels = {
   coins: [
-    "$PIVX",
-    "PIVX",
+    "$XLM",
+    "$ETH",
+    "$CRPT",
+    "$BNK",
+    "$BTC",
+    "$ETH",
+    "#bitcoin",
+    "#cryptocurrency",
+    "#ripple",
+    "#ethereum",
+    "bitcoin",
+    "ethereum",
+    "cryptocurrency",
   ],
 };
 
@@ -27,7 +38,7 @@ twitterStream.start(channels, function (tick, tweet, username) {
 });
 
 // open in browser
-opn("http://localhost:3001");
+opn("https://localhost:3001");
 
 // Static
 // var term = {query: '$XLM'};

@@ -1,4 +1,4 @@
-var server = require('http').createServer();
+var server = require('http').createServer()
 var socketServer = require('socket.io');
 var client = null; // hold socket here
 
@@ -8,7 +8,11 @@ var io = socketServer(server, {
 	// // below are engine.IO options
 	pingInterval: 10000,
 	pingTimeout: 5000,
-	cookie: false
+	cookie: false,
+	cors: {
+		origin: 'https://localhost:3001',
+		credentials: true
+	}
 });
 
 io.on('connection', function(socket) {
